@@ -9,7 +9,9 @@ COPY . /usr/src/app
 WORKDIR /usr/src/app/libdweetAgent
 
 
-RUN mkdir mybuild && cd mybuild && mkdir make && cmake .. make
+RUN mkdir mybuild
+WORKDIR /usr/src/app/libdweetAgent/mybuild
+RUN cmake .. make
 RUN make install
 
 WORKDIR /usr/src/app/libdweetAgent/Examples
