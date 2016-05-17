@@ -14,8 +14,10 @@ RUN cmake .. && make && make install
 
 WORKDIR /usr/src/app/libdweetAgent/make/Examples
 
-CMD ./dweetWriter
+//CMD ./dweetWriter
 
-#RUN gcc -o main main.c
+WORKDIR /usr/src/app
 
-#CMD ./main
+RUN gcc -o main main.c
+
+CMD ./main
