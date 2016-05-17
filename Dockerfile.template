@@ -18,6 +18,6 @@ RUN cmake .. && make && make install
 
 WORKDIR /usr/src/app
 
-RUN gcc -o main main.c
+#RUN gcc -o main main.c
 
-CMD ./main
+#CMD ./main
