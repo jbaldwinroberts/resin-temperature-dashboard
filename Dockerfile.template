@@ -3,21 +3,18 @@ FROM resin/%%RESIN_MACHINE_NAME%%-debian
 #switch on systemd init system in container
 ENV INITSYSTEM on
 
-RUN apt-get -q update && apt-get install -yq --no-install-recommends build-essential cmake && apt-get clean && rm -rf /var/lib/apt/lists/*
+RUN apt-get -q update && apt-get install -yq --no-install-recommends build-essential cmake curl && apt-get clean && rm -rf /var/lib/apt/lists/*
 
 COPY . /usr/src/app
 WORKDIR /usr/src/app/libdweetAgent
 
+RUN mkdir make
+WORKDIR /usr/src/app/libdweetAgent/make
+RUN cmake .. && make && make install
 
-#RUN mkdir mybuild
-#WORKDIR /usr/src/app/libdweetAgent/mybuild
-#RUN mkdir make
-#RUN cmake .. make
-#RUN make install
+WORKDIR /usr/src/app/libdweetAgent/make/Examples
 
-#WORKDIR /usr/src/app/libdweetAgent/Examples
-
-#RUN ./dweetWriter
+CMD ./dweetWriter
 
 #RUN gcc -o main main.c
 
