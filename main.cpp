@@ -6,7 +6,7 @@
 // 	return 0;
 // }
 
-#include "dweetApi.cpp"
+#include "dweetApi.hpp"
 
 DweetApi dweet;
 int main(int argc, char **argv)
