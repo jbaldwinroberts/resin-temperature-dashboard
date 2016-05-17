@@ -62,7 +62,7 @@ int main (int argc, char **argv)
 			sprintf(message,"temp=%f", tempC/1000);
 
 			printf(message);
-			dweet.push(message)
+			dweet.push(message);
 		}
 		close(fd);
 	} 
