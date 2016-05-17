@@ -6,8 +6,8 @@ ENV INITSYSTEM on
 RUN apt-get -q update && apt-get install -yq --no-install-recommends build-essential cmake libcurl4-nss-dev && apt-get clean && rm -rf /var/lib/apt/lists/*
 
 COPY . /usr/src/app
-WORKDIR /usr/src/app/libdweetAgent
 
+WORKDIR /usr/src/app/libdweetAgent
 RUN mkdir make
 WORKDIR /usr/src/app/libdweetAgent/make
 RUN cmake .. && make && make install

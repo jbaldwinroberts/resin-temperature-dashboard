@@ -5,6 +5,7 @@ add_library(dweetAgent src/cJSON.c src/dweetApi.cpp src/dweet.c)
 install(TARGETS dweetAgent DESTINATION lib)
 install(FILES include/dweet.h DESTINATION include)
 install(FILES include/dweetApi.hpp DESTINATION include)
+install(FILES include/cJSON.h DESTINATION include)
 
 IF (CMAKE_COMPILER_IS_GNUCC)
 	set(CMAKE_CXX_FLAGS "-g -O0 -Wall -fprofile-arcs -ftest-coverage")
