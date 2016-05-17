@@ -9,14 +9,15 @@ COPY . /usr/src/app
 WORKDIR /usr/src/app/libdweetAgent
 
 
-#RUN mkdir mybuild
-#WORKDIR /usr/src/app/libdweetAgent/mybuild
-#RUN cmake .. make
-#RUN make install
+RUN mkdir mybuild
+WORKDIR /usr/src/app/libdweetAgent/mybuild
+RUN mkdir make
+RUN cmake .. make
+RUN make install
 
-#WORKDIR /usr/src/app/libdweetAgent/Examples
+WORKDIR /usr/src/app/libdweetAgent/Examples
 
-#RUN ./dweetWriter
+RUN ./dweetWriter
 
 #RUN gcc -o main main.c
 
