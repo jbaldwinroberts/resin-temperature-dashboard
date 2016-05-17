@@ -12,12 +12,7 @@ RUN mkdir make
 WORKDIR /usr/src/app/libdweetAgent/make
 RUN cmake .. && make && make install
 
-#WORKDIR /usr/src/app/libdweetAgent/make/Examples
-
-#CMD ./dweetWriter
-
 WORKDIR /usr/src/app
+RUN g++ -o main main.cpp -ldweetAgent -lcurl -lgcov 
 
-#RUN gcc -o main main.c
-
-#CMD ./main
+CMD ./main
