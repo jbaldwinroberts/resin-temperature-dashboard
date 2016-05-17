@@ -9,6 +9,7 @@ extern "C"
 
 #include "cJSON.h"
 #include <stdio.h>
+#include <stdlib.h>
 
 #define DBGTRACK fprintf(stderr,"DBGTRACK %s:%d\n",__FUNCTION__,__LINE__);
 #define DBGPRINT(format, ...) \
