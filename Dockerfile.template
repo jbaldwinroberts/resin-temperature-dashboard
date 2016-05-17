@@ -12,9 +12,9 @@ RUN mkdir make
 WORKDIR /usr/src/app/libdweetAgent/make
 RUN cmake .. && make && make install
 
-WORKDIR /usr/src/app/libdweetAgent/make/Examples
+#WORKDIR /usr/src/app/libdweetAgent/make/Examples
 
-//CMD ./dweetWriter
+#CMD ./dweetWriter
 
 WORKDIR /usr/src/app
 
